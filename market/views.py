@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
-    buys = Order.objects.filter(type = 'buy')
-    sells = Order.objects.filter(type = 'sell')
+    buys = Order.objects.filter(type = 'buy').exclude(status = 'w')
+    sells = Order.objects.filter(type = 'sell').exclude(status = 'w')
     return render(request, 'home.html', {'buys' : buys, 'sells' : sells})
 
 @login_required
@@ -30,12 +30,13 @@ def contact(request, order_id):
 
 @login_required
 def dashboard(request):
-    owned = Order.objects.filter(owner = request.user)
+    owned = Order.objects.filter(owner = request.user).exclude(status = 'w')
     return render(request, 'dashboard.html', {'owned' : owned })
  
 @login_required 
 def delete(request, order_id):
     order = Order.objects.get(id = order_id)
     if order.owner == request.user:
-        order.delete()
+        order.status = 'w'
+        order.save()
     return redirect('dashboard')
