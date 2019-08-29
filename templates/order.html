@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+	<div class="card-body">
+		<div class="card-title"><h2>Post your order</h2></div>
+		<!-- <div class="card-header">Your phone number will not be shared until a buyer/seller shows interest.</div> -->
+		<form method="POST">
+		{% csrf_token %}
+			<table class="table">
+				<tr>
+					<td>Are you <b>Buying</b> or <b>Selling</b>?</td>
+					<td>{{ form.type }}</td>
+				</tr>
+				<tr>
+					<td>Which game ticket are you looking for?</td>
+					<td>{{ form.game }}</td>
+				</tr>
+				<tr>
+					<td>Which Section?</td>
+					<td>{{ form.section }}</td>
+				</tr>
+				<tr>
+					<td>Which Row?</td>
+					<td>{{ form.row }}</td>
+				</tr>
+				<tr>
+					<td>Price in nearest dollar</td>
+					<td>${{ form.price }}</td>
+				</tr>
+				<tr>
+					<td>Phone number or Email to Contact</td>
+					<td>{{ form.phone }}</td>
+				</tr>
+			</table>
+			<button type="submit" class="btn btn-outline-primary btn-block">Post</button>
+		</form>
+	</div>
+</div>
+{% endblock content %}
