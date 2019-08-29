@@ -25,7 +25,7 @@ SECRET_KEY = 'hq82#oj_6tv-xkm@as2m7e22)dfxi=eydd20duuvi8pd1f7-^0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mticket-matcher.herokuapp.com', 'localhost']
 
 
 # Application definition
