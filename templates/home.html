@@ -39,7 +39,7 @@
 									<td>{{ ask.row }}</td>
 									<td>${{ ask.price }}</td>
 									<td>{{ ask.views }}</td>
-									<td><a href="{% url 'contact' ask.id %}">Get Contact</a></td>
+									<td><a href="{% url 'contact' ask.id %}" class="btn btn-primary">Get Contact</a></td>
 								</tr>
 								{% endfor %}
 							</tbody>

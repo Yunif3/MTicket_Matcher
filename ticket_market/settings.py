@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hq82#oj_6tv-xkm@as2m7e22)dfxi=eydd20duuvi8pd1f7-^0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mticket-matcher.herokuapp.com', 'localhost']
 
