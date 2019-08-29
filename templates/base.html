@@ -19,21 +19,21 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<!-- <a class="nav-item nav-link" href="#">My Order Status</a> -->
-				<a class="nav-item nav-link" href="{% url 'order' %}">Post an Offer</a>
+				<a class="nav-item nav-link" href="{% url 'dashboard' %}">My Dashboard</a>
 			</div>
-			<!-- <div class="navbar-nav navbar-right"> -->
-			<!-- {% if user.is_authenticated %}  -->
-				<!-- <div class="nav-item dropdown"> -->
-					<!-- <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown"> -->
-					  <!-- {{ user.username }} -->
-					<!-- </a> -->
-				<!-- </div> -->
-				<!-- <a class="nav-item nav-link" href="#">Logout</a> -->
-			<!-- {% else %} -->
-				<!-- <a class="nav-item nav-link" href="#">Login</a> -->
-				<!-- <a class="nav-item nav-link" href="#">Sign Up</a> -->
-			<!-- {% endif %} -->
-			<!-- </div> -->
+			<div class="navbar-nav navbar-right">
+			{% if user.is_authenticated %} 
+				<div class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown">
+					  {{ user.username }}
+					</a>
+				</div>
+				<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+			{% else %}
+				<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+				<a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+			{% endif %}
+			</div>
 		</div>
   </nav>
   {% block content %}

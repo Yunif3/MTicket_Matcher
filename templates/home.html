@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container-fluid">
 	<div class="row justify-content-center">
 		<a href="{% url 'order' %}" class="btn btn-outline-primary btn-lg">Post an Offer</a>
-		<p>Post your Buying/Selling Offers in one place without having to post in multiple FB pages and GroupMe.<br>
-			View indicates the number of people who asked for the contact.<br>
-			Automatic price matching is currently in development progress.
-		</p>
 	</div>
-	<div class="row justify-content-center" style="height:60vh">
+	<div class="row justify-content-center">
+		<div class="col text-center">
+			<p>Post your Buying/Selling Offers in one place without having to post in multiple FB pages and GroupMe.<br>
+					View indicates the number of people who asked for the contact.<br>
+					Automatic price matching is currently in development progress.
+			</p>
+		</div>
+	</div>
+	<div class="row justify-content-center" style="height: 60vh">
 		<div class="col col-6">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -18,10 +23,10 @@
 					<div style="height: 50vh; overflow:scroll;">
 						<table class="table" style="overflow:scroll; -webkit-overflow-scrolling: touch;">
 							<colgroup>
-								<col style="width: 50%;">
+								<col style="width: 40%;">
 								<col style="width: 5%;">
 								<col style="width: 5%;">
-								<col style="width: 10%;">
+								<col style="width: 20%;">
 								<col style="width: 10%;">
 								<col style="width: 20%;">
 							</colgroup>
@@ -61,10 +66,10 @@
 					<div style="height: 50vh; overflow:scroll;">
 						<table class="table">
 							<colgroup>
-								<col style="width: 50%;">
+								<col style="width: 40%;">
 								<col style="width: 5%;">
 								<col style="width: 5%;">
-								<col style="width: 10%;">
+								<col style="width: 20%;">
 								<col style="width: 10%;">
 								<col style="width: 20%;">
 							</colgroup>
@@ -103,4 +108,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 {% endblock content %}
