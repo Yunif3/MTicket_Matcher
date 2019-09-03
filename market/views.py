@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
-    buys = Order.objects.filter(type = 'buy').exclude(status = 'w')
-    sells = Order.objects.filter(type = 'sell').exclude(status = 'w')
+    buys = Order.objects.filter(type = 'buy').filter(status = 'a')
+    sells = Order.objects.filter(type = 'sell').filter(status = 'a')
     return render(request, 'home.html', {'buys' : buys, 'sells' : sells})
 
 @login_required
